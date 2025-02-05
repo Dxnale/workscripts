@@ -6,7 +6,7 @@ gnome-terminal --tab --title="Console" -- zsh -c "cd ~/buk/buk-webapp; rails c; 
 
 
 # Espera un tiempo para asegurarse de que los terminales estén abiertos
-sleep 5
+sleep 2
 
 # Obtén el ID del proceso padre
 parent_pid=$$
@@ -18,3 +18,5 @@ terminal_pid=$(ps -o ppid= -p $$)
 wait
 
 # Cierra el terminal actual
+
+kill -9 $terminal_pid
